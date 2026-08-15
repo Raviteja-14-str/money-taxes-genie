@@ -1,0 +1,19 @@
+TITLE: Common Insurance Terms, Explained
+
+Insurance policies are full of specific terms that sound similar but mean very different things. Misunderstanding them is one of the most common ways people end up underinsured or surprised at claim time.
+
+PREMIUM is the amount you pay — monthly, quarterly, or annually — to keep your policy active. Miss enough premium payments and your policy can lapse, meaning you lose coverage (and sometimes any benefits built up, depending on the policy type).
+
+SUM ASSURED (for life insurance) or SUM INSURED (for health/general insurance) is the maximum amount the insurer will pay out. For life insurance, this is what your nominee receives if you pass away during the policy term. For health insurance, it's the maximum amount the insurer will cover for medical expenses in a policy year. A common mistake: assuming a higher premium always means higher coverage — always check the actual sum assured/insured, not just what you're paying.
+
+DEDUCTIBLE (or "co-pay" in health insurance) is the portion of a claim you pay yourself before the insurer covers the rest. A policy with a ₹10,000 deductible means you pay the first ₹10,000 of any claim, and the insurer covers the amount above that. Policies with higher deductibles usually have lower premiums, since you're absorbing more of the small, routine costs yourself.
+
+CLAIM is the formal request you make to the insurer to pay out — either because an insured event happened (death, for life insurance) or you incurred a covered expense (hospitalization, for health insurance). "Claim settlement ratio" is a useful public metric showing what percentage of claims an insurer actually approves and pays — worth checking before choosing an insurer.
+
+RIDER is an optional add-on to a base policy that extends coverage for a specific situation — common ones include a critical illness rider, accidental death rider, or waiver-of-premium rider (which pays your future premiums for you if you're disabled and can't pay). Riders cost extra but can meaningfully expand what a base policy covers.
+
+NOMINEE is the person you designate to receive the payout if a life insurance claim is triggered by your death. It's worth reviewing and updating your nominee after major life events (marriage, having children) since an outdated nominee designation can create real complications for your family.
+
+WAITING PERIOD (health insurance) is a set period after buying a policy — commonly 30 days for general claims, and much longer (2-4 years) for pre-existing conditions — during which certain claims won't be paid. This is why health insurance is best bought early, before you actually need it, rather than right when a health issue arises.
+
+TERM INSURANCE vs ENDOWMENT/WHOLE LIFE: term insurance is pure protection — you pay a premium, and if you pass away during the term, your nominee gets the sum assured; if you don't, you get nothing back, but premiums are much lower for the same coverage. Endowment or whole life policies combine insurance with a savings/investment component, so they return money even if you survive the term — but at a much higher premium for the same death coverage, and often lower investment returns than if you'd invested the difference separately.

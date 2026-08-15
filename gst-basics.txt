@@ -1,0 +1,13 @@
+TITLE: What Is GST, in Plain Terms
+
+GST (Goods and Services Tax) is a single indirect tax applied to almost everything you buy or the services you use in India, replacing a tangle of older taxes (VAT, service tax, excise, and others) that existed before 2017. As a regular consumer, GST is already baked into the price you see on most bills — you're paying it without necessarily noticing the breakdown.
+
+WHY IT'S "GOODS AND SERVICES": earlier, goods and services were taxed separately and inconsistently across states. GST unified this into one tax structure applied nationwide, so a product or service is taxed the same way regardless of which state you buy it in (aside from how the revenue is split between state and central government behind the scenes).
+
+TAX SLABS: GST isn't a single flat rate — different categories of goods and services fall into different slabs, commonly 0%, 5%, 12%, 18%, and 28%, depending on whether something is considered essential, standard, or a luxury/sin item. Basic unprocessed food items are often 0%. Everyday packaged goods tend to fall around 5-12%. Most standard services (like restaurant dining, telecom, and many retail goods) fall around 18%. Luxury items, tobacco, and similar categories can be taxed at 28% or more with additional cess.
+
+WHAT YOU SEE ON A BILL: a restaurant or retail bill often shows CGST and SGST separately (Central GST and State GST), each typically being half of the total GST rate. For example, an 18% GST item might show as 9% CGST + 9% SGST. For purchases across state lines (like e-commerce shipped interstate), you might instead see IGST (Integrated GST), which is the combined rate collected as one line and split between center and state afterward.
+
+GST AND SMALL BUSINESSES: businesses above a certain annual turnover threshold are required to register for GST and file periodic returns. Below that threshold, registration is often optional. This matters if you're a freelancer or run a small business — crossing the threshold means GST compliance becomes mandatory, not just a nice-to-have.
+
+As a consumer, there's nothing you need to actively "do" about GST — it's collected automatically by the seller. Understanding it mostly helps you make sense of why prices are what they are, and why a bill sometimes lists tax as two lines instead of one.

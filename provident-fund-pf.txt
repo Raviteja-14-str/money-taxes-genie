@@ -1,0 +1,15 @@
+TITLE: What Is PF, and How Withdrawal/Transfer Works
+
+PF (Provident Fund, specifically EPF — Employees' Provident Fund) is a mandatory retirement savings scheme for salaried employees in India, run by the EPFO (Employees' Provident Fund Organisation). It's essentially forced long-term saving, with the upside that it earns solid, government-set interest and is largely tax-free.
+
+HOW CONTRIBUTIONS WORK: both you and your employer contribute 12% of your Basic pay + Dearness Allowance to PF every month. Your 12% is deducted from your salary. Your employer's 12% is added on top — of that, a portion goes to your PF account and a portion goes to a linked pension scheme (EPS). Over years, this compounds into a meaningful retirement corpus.
+
+YOUR UAN (Universal Account Number) is a permanent 12-digit number linked to you for life, regardless of how many employers you have. Every company you work for creates a "member ID" under your UAN. You can check your balance, download statements, and manage everything through the EPFO member portal or the UMANG app using your UAN.
+
+WHEN YOU CHANGE JOBS: your PF doesn't disappear — you transfer your old PF balance into your new employer's PF account, linked under the same UAN. This can often be done online through the EPFO portal without needing physical paperwork, though it sometimes requires employer approval on both ends.
+
+WITHDRAWAL RULES: full withdrawal is meant for retirement or after being unemployed for a continuous period (currently 2 months, non-employed). Partial withdrawal is allowed for specific life events — medical emergencies, home purchase or construction, wedding expenses (for yourself, children, or siblings), or higher education — subject to minimum service-period conditions and withdrawal limits that vary by purpose.
+
+TAX TREATMENT: PF withdrawals are tax-free if you've completed 5 continuous years of service (across employers, as long as it was transferred each time). Withdrawing before 5 years can attract TDS and may need to be added to taxable income, with some exceptions for reasons beyond your control (like illness or employer shutdown).
+
+A common mistake: people withdraw their PF entirely when switching jobs instead of transferring it, losing years of compounding and potentially triggering unnecessary tax. Transferring, not withdrawing, is almost always the better move unless you actually need the money.

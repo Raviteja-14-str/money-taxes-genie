@@ -1,0 +1,19 @@
+TITLE: Understanding Your Salary Slip
+
+Most people never really read their salary slip beyond the final "in-hand" number. But it's one of the most useful documents you get every month, and understanding it helps you catch errors, plan taxes, and know exactly what you're being paid for.
+
+BASIC PAY is the core of your salary, usually 40-50% of your total CTC (Cost to Company). Almost every other component — PF, gratuity, HRA — is calculated as a percentage of Basic. A higher Basic means higher PF contribution (good for retirement savings) but also slightly lower take-home pay today, since more gets deducted.
+
+HRA (House Rent Allowance) is paid to help cover rent. It's partially or fully tax-exempt if you actually pay rent and can show proof (usually rent receipts, and a landlord PAN if annual rent exceeds a threshold). If you own your home and don't pay rent, HRA becomes fully taxable.
+
+SPECIAL ALLOWANCE is a flexible, fully taxable component companies use to balance the total CTC number after fixing Basic and HRA. There's no special tax treatment here — it's taxed like regular salary.
+
+PROVIDENT FUND (PF) is a mandatory retirement savings deduction. Both you and your employer typically contribute 12% of your Basic pay to your PF account. Your contribution is deducted from your salary; your employer's contribution is added on top (it's part of your CTC but not your take-home pay). This money earns interest and is meant to be withdrawn at retirement, though partial withdrawal is allowed under specific conditions.
+
+PROFESSIONAL TAX is a small state-level tax (varies by state, usually a few hundred rupees a month) deducted directly from your salary. It's not related to income tax — it's a separate state government levy.
+
+TDS (Tax Deducted at Source) is your employer estimating your annual tax liability and deducting a portion every month, so you're not hit with a huge tax bill at year-end. It's an advance payment of your income tax, not an extra tax.
+
+GROSS SALARY is your total earnings before any deductions. NET SALARY (or "in-hand" salary) is what actually lands in your bank account after PF, professional tax, TDS, and any other deductions are subtracted from Gross.
+
+A quick way to read any slip: start from CTC (what the company spends on you) → subtract employer's PF and other employer contributions to get Gross Salary → subtract PF (your share), professional tax, and TDS to get Net Salary (your take-home).

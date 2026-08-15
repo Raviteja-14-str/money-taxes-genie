@@ -1,0 +1,14 @@
+TITLE: Investing, Risk, Diversification, Shares, Bonds, and Market Basics
+
+SAVING usually prioritises access and stability. INVESTING accepts uncertainty in pursuit of a possible return. Risks include loss of principal, liquidity risk, interest-rate risk, credit/default risk, inflation risk, concentration risk, and fraud risk.
+
+EQUITY represents ownership in a company. A BOND or debt security represents a lending relationship with stated terms, but the issuer may still have credit risk and the market value can move. A mutual fund or ETF pools money into a portfolio. A demat account holds securities electronically.
+
+DIVERSIFICATION spreads exposure across assets, issuers, sectors, or time. It reduces concentration risk but does not remove market loss. Past performance is not a promise of future results.
+
+Before acting, understand the goal, time horizon, liquidity need, costs, tax treatment, risk level, and official product documents. Check that the intermediary is registered with the relevant regulator. Money Genie does not select securities, predict prices, promise returns, or provide personalised investment advice.
+
+SOURCE NOTES (checked 2026-08-15):
+- SEBI Investor education materials: https://investor.sebi.gov.in/iematerial.html
+- SEBI investor education programme: https://www.sebi.gov.in/sebi_data/commondocs/siep_h.html
+- SEBI investor website: https://investor.sebi.gov.in/about.html

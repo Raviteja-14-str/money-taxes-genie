@@ -1,0 +1,18 @@
+[
+  {"question": "What is fixed pay versus variable pay?", "expected_source": "salary-pay-components.txt"},
+  {"question": "Is CTC the same as take-home salary?", "expected_source": "salary-pay-components.txt"},
+  {"question": "What is an emergency fund?", "expected_source": "budgeting-cash-flow.txt"},
+  {"question": "What is the difference between a savings account and a fixed deposit?", "expected_source": "bank-accounts-deposits-kyc.txt"},
+  {"question": "How much of a bank deposit is covered by DICGC insurance?", "expected_source": "bank-accounts-deposits-kyc.txt"},
+  {"question": "Why can a longer loan tenure cost more?", "expected_source": "borrowing-credit-loans.txt"},
+  {"question": "Is a UPI PIN needed to receive money?", "expected_source": "digital-payments-safety.txt"},
+  {"question": "What is the difference between FY and AY?", "expected_source": "income-tax-compliance-workflow.txt"},
+  {"question": "What is AIS and how is it different from Form 26AS?", "expected_source": "income-tax-compliance-workflow.txt"},
+  {"question": "What is the difference between a tax deduction and a rebate?", "expected_source": "tax-deductions-and-exemptions.txt"},
+  {"question": "Why are mutual funds not guaranteed returns?", "expected_source": "mutual-funds-and-sip-expanded.txt"},
+  {"question": "What is diversification?", "expected_source": "investing-risk-and-markets.txt"},
+  {"question": "What should I check in a health insurance policy?", "expected_source": "insurance-policy-and-claims.txt"},
+  {"question": "What is NPS?", "expected_source": "retirement-pension-savings.txt"},
+  {"question": "What are signs of a financial scam?", "expected_source": "financial-scams-and-complaints.txt"},
+  {"question": "Can you file my tax return or use my OTP?", "expected_source": null}
+]

@@ -1,0 +1,13 @@
+TITLE: Old vs New Tax Regime — What's the Difference?
+
+India currently gives taxpayers a choice between two ways of calculating income tax: the Old Regime and the New Regime. You can pick whichever works out cheaper for you, and salaried individuals can even switch their choice each year when filing returns.
+
+THE NEW REGIME is the current default. It offers lower tax rates spread across more income slabs, but in exchange, it removes most deductions and exemptions. You can't claim HRA exemption, the Section 80C deduction (for PF, ELSS, life insurance, etc.), or home loan interest deduction under this regime. What you get instead is simplicity — fewer things to track, fewer documents to submit — and, as of recent budgets, income up to a fairly high threshold effectively pays zero tax due to a rebate (see the Income Tax Slabs document for exact current numbers, since these change with each year's Budget).
+
+THE OLD REGIME has higher slab rates but allows a long list of deductions: Section 80C (up to ₹1.5 lakh for PF, ELSS, PPF, life insurance premiums, etc.), Section 80D (health insurance premiums), HRA exemption if you pay rent, home loan interest deduction, and several others. If you actively invest in tax-saving instruments, pay rent, or have a home loan, the Old Regime can end up cheaper despite the higher headline rates — because your *taxable* income drops significantly after deductions.
+
+HOW TO DECIDE: broadly, if you don't have significant deductions to claim — no rent, no home loan, minimal 80C investments — the New Regime is almost always better since its rates are lower outright. If you have substantial HRA, 80C investments, and other deductions that add up to a large chunk of your income, it's worth calculating both ways, because the Old Regime might still win.
+
+A simple way to check: add up all your eligible deductions (HRA + 80C + 80D + home loan interest, etc.). If that total is large relative to your income, the Old Regime is worth comparing seriously. If it's small, the New Regime usually wins.
+
+Salaried employees choose their regime for TDS purposes at the start of the financial year (usually by informing HR), but can change their final choice when actually filing their Income Tax Return. Business owners and professionals have more restrictions on how often they can switch.

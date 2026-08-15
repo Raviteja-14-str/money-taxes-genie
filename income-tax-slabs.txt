@@ -1,0 +1,15 @@
+TITLE: Income Tax Slabs, Explained Plainly
+
+India uses a "progressive" tax system — you don't pay one flat rate on your whole income. Instead, your income is split into slices (slabs), and each slice is taxed at its own rate. This is the single most misunderstood part of Indian taxation, so it's worth getting right.
+
+HOW SLABS ACTUALLY WORK: if a slab rate of 10% kicks in above ₹8 lakh, that does NOT mean your entire income gets taxed at 10% once you cross ₹8 lakh. Only the portion of income that falls within that ₹8 lakh-plus slice is taxed at 10%. The portion below it is still taxed at the lower rates for those slices. This is why earning one rupee more never makes your overall tax bill jump dramatically — only that one rupee moves into a new bracket.
+
+NEW REGIME SLABS (as set out in the Union Budget 2025, continued unchanged for FY 2026-27): income up to ₹4 lakh is tax-free, ₹4-8 lakh is taxed at 5%, ₹8-12 lakh at 10%, ₹12-16 lakh at 15%, ₹16-20 lakh at 20%, ₹20-24 lakh at 25%, and anything above ₹24 lakh at 30%. On top of this, salaried individuals and pensioners get a standard deduction of ₹75,000 taken off their gross salary before slabs even apply.
+
+THE REBATE THAT MATTERS MOST: under Section 87A, if your total taxable income (after the standard deduction) is up to ₹12 lakh, you get a rebate of up to ₹60,000 — which is enough to cancel out the tax entirely on income up to that level. In practice, this means a salaried person earning up to roughly ₹12.75 lakh gross ends up paying zero income tax under the new regime. Above that threshold, the rebate no longer applies and normal slab-wise tax is due on the full amount.
+
+OLD REGIME SLABS (unchanged for years): income up to ₹2.5 lakh is tax-free, ₹2.5-5 lakh at 5%, ₹5-10 lakh at 20%, and above ₹10 lakh at 30%. Standard deduction here is ₹50,000, and the Section 87A rebate applies up to ₹5 lakh taxable income (worth up to ₹12,500).
+
+A 4% "Health and Education Cess" is added on top of whatever tax is calculated, in both regimes.
+
+IMPORTANT: tax slabs and rebates are set fresh in each year's Union Budget and can change. The numbers above reflect FY 2025-26/2026-27 rules. Always cross-check the current year's figures on the official Income Tax Department website (incometax.gov.in) before filing or making financial decisions based on them.

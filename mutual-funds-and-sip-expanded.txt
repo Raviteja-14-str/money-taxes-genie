@@ -1,0 +1,14 @@
+TITLE: Mutual Funds, SIP, NAV, Direct Plans, Costs, and Risk
+
+A MUTUAL FUND pools money from investors and invests it according to a stated objective. The asset-management company manages the portfolio, while scheme documents describe the objective, risks, costs, and operating terms.
+
+NAV (Net Asset Value) is the per-unit value calculated from scheme assets and liabilities. A SIP is a method of investing a chosen amount at regular intervals; it is not an asset class and does not guarantee profit or remove market risk. SWP is a systematic withdrawal method.
+
+Equity, debt, hybrid, index, sectoral, thematic, liquid, and other categories have different objectives and risks. A risk-o-meter communicates the scheme's risk level. Debt funds are not automatically risk-free.
+
+DIRECT and REGULAR plans generally have the same underlying scheme but different distribution arrangements and costs. Expense ratio, exit load, taxes, tracking error, concentration, and liquidity can affect outcomes. Do not confuse an SIP with a guaranteed recurring deposit or borrow to invest.
+
+SOURCE NOTES (checked 2026-08-15):
+- SEBI Understanding Mutual Funds: https://investor.sebi.gov.in/understanding_mf.html
+- SEBI Financial Education Booklet: https://investor.sebi.gov.in/pdf/downloadable-documents/Financial%20Education%20Booklet%20-%20English.pdf
+- SEBI regular and direct mutual funds: https://investor.sebi.gov.in/regular_and_direct_mutual_funds.html

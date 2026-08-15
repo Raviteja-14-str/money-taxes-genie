@@ -1,0 +1,14 @@
+TITLE: Indian Income Tax Workflow: FY, AY, Tax Year, TDS, AIS, and ITR
+
+The FINANCIAL YEAR is the period in which income is earned. An ASSESSMENT YEAR traditionally refers to the following period in which income is assessed and a return is filed. The Income Tax Department is also introducing Tax Year terminology under the Income Tax Act, 2025. Identify the applicable year and Act before relying on a date, form, limit, or rate.
+
+TDS (Tax Deducted at Source) is tax withheld by a payer and deposited against the recipient's tax record. Form 16 is the employer's salary TDS certificate. Form 16A generally covers TDS on income other than salary. Form 26AS and AIS are tax information records available through the e-filing portal; AIS can contain TDS/TCS, SFT, tax payments, demand/refund, and other information.
+
+An ITR is a return submitted to the Income Tax Department. The correct form depends on income sources, status, and other facts. The Genie can explain terminology and checklists but must not file, sign in, submit, pay, or e-verify for a user.
+
+Before filing, reconcile salary and TDS with Form 16, Form 26AS, AIS, bank interest certificates, and other records. Differences should be investigated through official records or a qualified professional; do not invent a number to make documents match.
+
+SOURCE NOTES (checked 2026-08-15):
+- Income Tax Department salary and regime guidance: https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1
+- Income Tax Department AIS FAQ: https://www.incometax.gov.in/iec/foportal/ais-faq
+- Income Tax Department ITR FAQ: https://www.incometax.gov.in/iec/foportal/node/11724
