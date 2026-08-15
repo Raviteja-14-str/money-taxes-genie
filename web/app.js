@@ -5,6 +5,7 @@ const input = document.querySelector("#question");
 const send = document.querySelector("#send");
 const messages = document.querySelector("#messages");
 const status = document.querySelector("#status");
+const conversationHistory = [];
 
 function addMessage(kind, text, sources = []) {
   const article = document.createElement("article");
@@ -49,11 +50,14 @@ async function ask(question) {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: trimmed })
+      body: JSON.stringify({ question: trimmed, history: conversationHistory.slice(-6) })
     });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "The assistant could not respond.");
     addMessage("genie", data.answer, data.sources || []);
+    conversationHistory.push({ role: "user", content: trimmed });
+    conversationHistory.push({ role: "assistant", content: data.answer });
+    if (conversationHistory.length > 12) conversationHistory.splice(0, conversationHistory.length - 12);
     status.textContent = "Ready for a question";
   } catch (error) {
     addMessage("genie error", `I couldn’t answer just now: ${error.message}`);
