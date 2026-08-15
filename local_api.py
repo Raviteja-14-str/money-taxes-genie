@@ -24,6 +24,7 @@ import mimetypes
 import os
 import re
 import sys
+import time
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -44,38 +45,115 @@ HF_MODEL = os.environ.get("HF_MODEL", "Qwen/Qwen3-0.6B")
 HF_PROVIDER = os.environ.get("HF_PROVIDER")
 MAX_QUESTION_CHARS = 4000
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "700"))
+MAX_HISTORY_MESSAGES = 6
+MAX_HISTORY_ITEM_CHARS = 1200
+MIN_RELEVANCE_SCORE = 2.0
 
 
 SYSTEM_PROMPT = """You are Money & Taxes Genie, a plain-language assistant that explains Indian personal finance and tax concepts.
 Rules:
 - Answer ONLY using the CONTEXT provided below.
 - If the context doesn't cover the question, say so plainly instead of guessing.
+- Earlier user questions are only for resolving references such as "it" or "that"; never treat an earlier assistant answer as a factual source.
 - This is general education, never personalized financial or tax advice — don't tell the user what they specifically should do with their money.
 - Keep answers clear and to the point.
 - Never ask for or repeat PAN, Aadhaar, bank-account, card, password, or other secret information.
 """
 
 
+ABOUT_RESPONSE = (
+    "I’m Money & Taxes Genie. I retrieve relevant, source-attributed Indian finance and tax "
+    "learning documents, then use a local or cloud language model to explain them in plain language. "
+    "I do not access bank accounts, perform transactions, file returns, or provide personalised "
+    "financial, tax, or investment advice."
+)
+
+SAFETY_RESPONSE = (
+    "I can explain the process and provide a general checklist, but I cannot file, sign in, submit, pay, "
+    "e-verify, or use an OTP for you. Please keep OTPs, passwords, PAN/Aadhaar numbers, and account or card "
+    "details private."
+)
+
+NO_CONTEXT_RESPONSE = (
+    "I don’t have a reliable source for that in my current knowledge files. "
+    "Please ask about an Indian money or tax concept covered by the assistant, or add an authoritative source first."
+)
+
+
 STOPWORDS = {
-    "about", "after", "also", "and", "are", "can", "could", "does", "explain",
-    "from", "have", "help", "how", "into", "what", "when", "where", "which",
-    "with", "would", "your", "the", "this", "that", "for", "india", "indian",
+    "a", "about", "after", "also", "am", "an", "and", "are", "as", "at", "be",
+    "can", "could", "do", "does", "explain", "for", "from", "have", "help", "how",
+    "i", "in", "into", "is", "it", "me", "my", "of", "on", "or", "please", "tell",
+    "that", "the", "this", "to", "what", "when", "where", "which", "with", "would",
+    "you", "your", "india", "indian", "today", "now", "current", "latest",
 }
 
 
 def words(value: str) -> set[str]:
     return {
         token.lower()
-        for token in re.findall(r"[A-Za-z][A-Za-z0-9'-]{2,}", value)
+        for token in re.findall(r"[A-Za-z][A-Za-z0-9'-]*", value)
         if token.lower() not in STOPWORDS
     }
 
 
 def contains_term(text: str, term: str) -> bool:
-    """Match short tax abbreviations as words, not as substrings of other words."""
-    if len(term) <= 2:
+    """Match abbreviations as words and phrases as normalized substrings."""
+    if len(term) <= 3:
         return bool(re.search(rf"\b{re.escape(term)}\b", text))
     return term in text
+
+
+def normalize_question(value: str) -> str:
+    """Normalize common finance abbreviations, spelling variants, and typos for retrieval."""
+    normalized = re.sub(r"\s+", " ", value.lower()).strip()
+    replacements = (
+        (r"\bpay\s*slip\b|\bpayslip\b|\bsalary statement\b", "salary slip"),
+        (r"\bprovisional\s+funds?\b", "provident fund"),
+        (r"\bprovident\s+funds?\b", "provident fund"),
+        (r"\bpf\b|\bepf\b", "provident fund"),
+        (r"\bform\s*26\s*as\b|\b26\s+as\b", "26as"),
+        (r"\bform\s*16\b", "form16"),
+        (r"\btax\s+deducted\s+at\s+source\b", "tds"),
+        (r"\bmutual\s+funds?\b", "mutual fund"),
+        (r"\bupi\s+pin\b", "upi pin"),
+    )
+    for pattern, replacement in replacements:
+        normalized = re.sub(pattern, replacement, normalized)
+    return normalized
+
+
+def sanitize_history(history: Any) -> list[str]:
+    """Keep only short earlier user questions; assistant text is not trusted as source material."""
+    if not isinstance(history, list):
+        return []
+    questions = []
+    for item in history:
+        if not isinstance(item, dict) or item.get("role") != "user":
+            continue
+        content = str(item.get("content") or "").strip()
+        if content:
+            questions.append(content[:MAX_HISTORY_ITEM_CHARS])
+    return questions[-MAX_HISTORY_MESSAGES:]
+
+
+def is_about_question(question: str) -> bool:
+    normalized = normalize_question(question)
+    return bool(re.search(r"\b(how do you work|what can you do|who are you|what is money genie)\b", normalized))
+
+
+def is_protected_action_question(question: str) -> bool:
+    normalized = normalize_question(question)
+    return bool(
+        re.search(r"\b(file|submit|pay|e[- ]?verify)\b.*\b(return|tax|bill|transaction)\b", normalized)
+        or re.search(r"\b(use|enter|share|send|provide)\b.*\b(my\s+)?otp\b", normalized)
+        or re.search(r"\b(sign in|log in|login)\b.*\b(my\s+)?(bank|account)\b", normalized)
+    )
+
+
+def is_follow_up(question: str) -> bool:
+    normalized = normalize_question(question)
+    return bool(re.search(r"\b(it|that|this|they|them|same|there|then)\b|\bwhat about\b", normalized))
 
 
 def load_documents() -> list[dict[str, Any]]:
@@ -98,16 +176,51 @@ def load_documents() -> list[dict[str, Any]]:
     return documents
 
 
-def retrieve(question: str, top_k: int = 4) -> list[tuple[float, dict[str, str]]]:
-    question_words = words(question)
-    lowered_question = question.lower()
+def retrieve(question: str, top_k: int = 4) -> list[tuple[float, dict[str, Any]]]:
+    lowered_question = normalize_question(question)
+    question_words = words(lowered_question)
+    focused_source = None
+    original_question = question.lower()
+    if re.search(r"\b(nps|ppf|retirement|pension)\b", original_question):
+        focused_source = "retirement-pension-savings.txt"
+    elif re.search(r"\b(first[- ]time investor|new investor)\b", original_question):
+        focused_source = "mutual-funds-sip-basics.txt"
+    elif re.search(r"\b(pf|epf|uan|eps|edli|provisional funds?)\b", original_question) or "provident fund" in lowered_question:
+        focused_source = "provident-fund-pf.txt"
+    elif re.search(r"\b(form\s*16|form16)\b", original_question):
+        focused_source = "form16-basics.txt"
+    elif re.search(r"\b(ais|26as|tds)\b", original_question):
+        focused_source = "income-tax-compliance-workflow.txt"
+    elif re.search(r"\b(nps|ppf)\b", original_question):
+        focused_source = "retirement-pension-savings.txt"
+    elif re.search(r"\b(upi)\b", original_question):
+        focused_source = "digital-payments-safety.txt"
+    elif re.search(r"\b(gst|cgst|sgst|igst)\b", original_question):
+        focused_source = "gst-basics.txt"
     topic_hints = (
-        (("fy", "ay", "assessment year", "financial year", "tax year"), "income-tax-compliance-workflow.txt"),
-        (("ais", "26as", "26 as", "annual information statement"), "income-tax-compliance-workflow.txt"),
-        (("deduction", "rebate", "exemption"), "tax-deductions-and-exemptions.txt"),
+        (("provident fund", "pf", "epf", "uan", "eps", "edli"), "provident-fund-pf.txt"),
+        (("fixed pay", "variable pay", "ctc", "gross pay", "take home", "net pay", "bonus", "incentive"), "salary-pay-components.txt"),
+        (("salary slip", "basic pay", "hra"), "understanding-salary-slip.txt"),
+        (("form16",), "form16-basics.txt"),
+        (("fy", "ay", "assessment year", "financial year", "tax year", "tds", "ais", "26as"), "income-tax-compliance-workflow.txt"),
+        (("old regime", "new regime", "tax regime", "115bac"), "old-vs-new-tax-regime.txt"),
+        (("deduction", "rebate", "exemption", "80c", "80d"), "tax-deductions-and-exemptions.txt"),
+        (("budget", "cash flow", "emergency fund", "saving", "savings"), "budgeting-cash-flow.txt"),
+        (("bank account", "fixed deposit", "recurring deposit", "kyc", "nomination", "dicgc"), "bank-accounts-deposits-kyc.txt"),
+        (("loan", "emi", "interest rate", "credit score", "credit card", "borrowing"), "borrowing-credit-loans.txt"),
+        (("upi", "digital payment", "qr code", "unauthorised transaction"), "digital-payments-safety.txt"),
+        (("first-time investor", "new investor"), "mutual-funds-sip-basics.txt"),
+        (("sip", "nav", "direct plan", "regular plan", "expense ratio", "exit load", "mutual fund"), "mutual-funds-and-sip-expanded.txt"),
+        (("diversification", "shares", "stocks", "bonds", "demat", "investment risk"), "investing-risk-and-markets.txt"),
+        (("health insurance", "life insurance", "claim", "co-pay", "waiting period", "sum insured", "policy"), "insurance-policy-and-claims.txt"),
+        (("nps", "ppf", "retirement", "pension"), "retirement-pension-savings.txt"),
+        (("scam", "fraud", "unauthorised", "complaint"), "financial-scams-and-complaints.txt"),
+        (("gst", "cgst", "sgst", "igst"), "gst-basics.txt"),
     )
     scored = []
     for document in load_documents():
+        if focused_source and document["source"] != focused_source:
+            continue
         document_words = words(document["text"])
         overlap = len(question_words & document_words)
         phrase_bonus = 0.0
@@ -122,16 +235,25 @@ def retrieve(question: str, top_k: int = 4) -> list[tuple[float, dict[str, str]]
                 phrase_bonus += 1.5
         for terms, preferred_source in topic_hints:
             if any(contains_term(lowered_question, term) for term in terms):
-                phrase_bonus += 5.0 if document["source"] == preferred_source else 0.0
+                phrase_bonus += 8.0 if document["source"] == preferred_source else 0.0
         score = overlap + phrase_bonus
-        if score > 0:
+        if score >= MIN_RELEVANCE_SCORE:
             scored.append((score, document))
-    scored.sort(key=lambda pair: pair[0], reverse=True)
+    scored.sort(key=lambda pair: (-pair[0], pair[1]["source"]))
     return scored[:top_k]
 
 
-def build_messages(question: str, context: str) -> list[dict[str, str]]:
-    user_message = f"CONTEXT:\n{context}\n\nQUESTION: {question}"
+def build_retrieval_question(question: str, history: list[str]) -> str:
+    if history and is_follow_up(question):
+        return f"{history[-1]} {question}"
+    return question
+
+
+def build_messages(question: str, context: str, history: list[str] | None = None) -> list[dict[str, str]]:
+    earlier = ""
+    if history:
+        earlier = "EARLIER USER QUESTIONS (reference only):\n" + "\n".join(f"- {item}" for item in history) + "\n\n"
+    user_message = f"{earlier}KNOWLEDGE CONTEXT:\n{context}\n\nCURRENT QUESTION: {question}"
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_message},
@@ -153,13 +275,20 @@ def call_ollama(messages: list[dict[str, str]]) -> str:
         "options": {"temperature": 0.2, "num_ctx": 8192},
     }).encode("utf-8")
     request = Request(OLLAMA_URL, data=payload, headers={"Content-Type": "application/json"})
-    try:
-        with urlopen(request, timeout=180) as response:
-            result = json.loads(response.read().decode("utf-8"))
-    except (HTTPError, URLError, TimeoutError) as error:
+    last_error = None
+    for attempt in range(2):
+        try:
+            with urlopen(request, timeout=180) as response:
+                result = json.loads(response.read().decode("utf-8"))
+            break
+        except (HTTPError, URLError, TimeoutError, OSError) as error:
+            last_error = error
+            if attempt == 0:
+                time.sleep(0.5)
+    else:
         raise RuntimeError(
             f"Ollama is not reachable at {OLLAMA_URL}. Start Ollama and run '{OLLAMA_MODEL}'."
-        ) from error
+        ) from last_error
     return clean_model_output(result["message"]["content"])
 
 
@@ -172,8 +301,22 @@ def call_huggingface_local(messages: list[dict[str, str]]) -> str:
         ) from error
 
     generator = get_hf_pipeline()
+    prompt: Any = messages
+    tokenizer = getattr(generator, "tokenizer", None)
+    if tokenizer is not None and hasattr(tokenizer, "apply_chat_template"):
+        try:
+            prompt = tokenizer.apply_chat_template(
+                messages,
+                tokenize=False,
+                add_generation_prompt=True,
+                enable_thinking=False,
+            )
+        except TypeError:
+            # Some Transformers/tokenizer combinations do not expose Qwen's
+            # enable_thinking switch. The output cleaner remains a fallback.
+            prompt = messages
     result = generator(
-        messages,
+        prompt,
         max_new_tokens=MAX_OUTPUT_TOKENS,
         do_sample=False,
         return_full_text=False,
@@ -225,17 +368,58 @@ def get_hf_pipeline() -> Any:
     return _HF_PIPELINE
 
 
-def answer_question(question: str) -> tuple[str, list[dict[str, Any]]]:
-    matches = retrieve(question)
+def source_payload(matches: list[tuple[float, dict[str, Any]]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "doc_title": document["title"],
+            "relevance": round(score, 3),
+            "source_urls": document.get("source_urls", []),
+        }
+        for score, document in matches
+    ]
+
+
+def direct_answer(question: str, matches: list[tuple[float, dict[str, Any]]]) -> str | None:
+    lowered = question.lower()
+    if re.search(r"\b(pf|epf|provisional funds?)\b", lowered) and re.search(r"\b(what|meaning|stand|is|pay slip|payslip)\b", lowered):
+        return (
+            "PF usually means Provident Fund, specifically EPF (Employees’ Provident Fund) in an Indian payslip. "
+            "It is a retirement-savings contribution; the employee contribution is deducted from pay, while the employer contribution is shown separately according to the applicable rules."
+        )
+    if "provisional" in lowered and "fund" in lowered:
+        return "The usual term is Provident Fund, not provisional funds. In an Indian payslip, PF generally refers to Employees’ Provident Fund (EPF)."
+    return None
+
+
+def answer_question(question: str, history: Any = None) -> tuple[str, list[dict[str, Any]]]:
+    history_questions = sanitize_history(history)
+    if is_protected_action_question(question):
+        return SAFETY_RESPONSE, []
+    if is_about_question(question):
+        return ABOUT_RESPONSE, []
+
+    retrieval_question = build_retrieval_question(question, history_questions)
+    matches = retrieve(retrieval_question)
+    if not matches:
+        return NO_CONTEXT_RESPONSE, []
+
+    best_score = matches[0][0]
+    if best_score >= 8.0:
+        matches = [match for match in matches if match[0] >= best_score * 0.4]
+
+    direct = direct_answer(question, matches)
+    if direct:
+        return direct, source_payload(matches)
+
     if matches:
         context = "\n\n---\n\n".join(
             f"[Source: {document['title']}]\n{document['text']}"
             for _score, document in matches
         )
     else:
-        context = "(no relevant sources found in the local knowledge files)"
+        return NO_CONTEXT_RESPONSE, []
 
-    messages = build_messages(question, context)
+    messages = build_messages(question, context, history_questions)
     if PROVIDER == "ollama":
         answer = call_ollama(messages)
     elif PROVIDER == "hf_local":
@@ -245,15 +429,7 @@ def answer_question(question: str) -> tuple[str, list[dict[str, Any]]]:
     else:
         raise RuntimeError("MG_PROVIDER must be ollama, hf_local, or hf_api.")
 
-    sources = [
-        {
-            "doc_title": document["title"],
-            "relevance": round(score, 3),
-            "source_urls": document.get("source_urls", []),
-        }
-        for score, document in matches
-    ]
-    return answer, sources
+    return answer, source_payload(matches)
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -301,7 +477,7 @@ class Handler(BaseHTTPRequestHandler):
             if len(question) > MAX_QUESTION_CHARS:
                 self.send_json(HTTPStatus.REQUEST_ENTITY_TOO_LARGE, {"error": "Question is too long."})
                 return
-            answer, sources = answer_question(question)
+            answer, sources = answer_question(question, body.get("history"))
             self.send_json(HTTPStatus.OK, {"answer": answer, "sources": sources})
         except Exception as error:  # noqa: BLE001 - public API must not leak internals
             print(f"local provider error: {error}", file=sys.stderr)
