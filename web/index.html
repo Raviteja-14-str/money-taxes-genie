@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Money & Taxes Genie explains Indian personal finance and tax concepts in plain language." />
+    <title>Money & Taxes Genie</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">INDIAN MONEY, MADE CLEARER</p>
+        <h1>Money <span>&amp;</span><br />Taxes Genie</h1>
+        <p class="intro">A plain-language learning assistant for salary slips, tax regimes, PF, GST, insurance, SIPs, and Form 16.</p>
+        <p class="notice">Educational information only — not personalised financial, tax, investment, or legal advice.</p>
+      </header>
+
+      <section class="card conversation" aria-label="Conversation">
+        <div id="messages" class="messages" aria-live="polite">
+          <article class="message genie"><div class="avatar">✦</div><div><strong>Namaste — I’m Money &amp; Taxes Genie.</strong><p>Ask me to explain a money or tax concept in simple terms. Please don’t share account numbers, PAN/Aadhaar, passwords, or card details.</p></div></article>
+        </div>
+        <div class="suggestions" aria-label="Suggested questions">
+          <button data-question="What is the difference between the old and new tax regimes in India?">Old vs new tax regime</button>
+          <button data-question="What do the common sections on an Indian salary slip mean?">Understand a salary slip</button>
+          <button data-question="Explain how an SIP works, in educational terms.">Learn about SIPs</button>
+        </div>
+        <form id="composer">
+          <textarea id="question" maxlength="4000" rows="1" placeholder="Ask about Indian money or tax concepts…" required></textarea>
+          <button id="send" type="submit" aria-label="Send question">→</button>
+        </form>
+        <p id="status" class="status">Ready for a question</p>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

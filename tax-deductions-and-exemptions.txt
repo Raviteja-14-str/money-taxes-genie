@@ -1,0 +1,13 @@
+TITLE: Tax Deductions, Exemptions, Rebates, and Regime Choices
+
+An EXEMPTION generally removes an eligible amount or receipt from taxable income under a rule. A DEDUCTION reduces income or a specified base after eligibility conditions are met. A REBATE reduces tax payable when the taxpayer and income meet the relevant conditions. These are different ideas.
+
+Common topics include standard deduction, house-rent allowance, home-loan interest, Section 80C items such as certain PF, PPF, ELSS, and life-insurance payments, and Section 80D health-insurance payments. Eligibility, limits, documentation, timing, and regime availability can change; a product being popular does not make it automatically deductible.
+
+The new tax regime is the default for many individual taxpayers under current guidance, while eligible taxpayers may choose the old regime subject to the applicable procedure. Non-business and business/profession cases can have different switching rules. Identify the correct year and eligible deductions before comparing.
+
+Never buy an investment or insurance product solely for a tax label. This is educational information, not a recommendation to choose a regime or claim a deduction.
+
+SOURCE NOTES (checked 2026-08-15):
+- Income Tax Department current regime guidance: https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1
+- Income Tax Department tax estimator manual: https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/income-and-tax-estimator-um

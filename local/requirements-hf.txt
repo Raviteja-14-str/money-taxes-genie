@@ -1,0 +1,6 @@
+# Hugging Face local Transformers and optional hosted InferenceClient support.
+# Qwen3 requires a recent Transformers release.
+transformers>=4.51.0
+torch
+accelerate
+huggingface_hub

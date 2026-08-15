@@ -1,0 +1,14 @@
+TITLE: Financial Scams, Unauthorised Transactions, and Complaint Routes
+
+Common warning signs include guaranteed or unusually high returns, urgency, secrecy, fake regulator or bank identities, requests to pay a personal account, remote-access software, requests for OTPs or PINs, fake support numbers, and pressure to recruit others. A familiar logo or polished app does not prove legitimacy.
+
+Use the regulator or institution's official website to verify registration and contact details. Do not rely on a phone number, link, QR code, or document supplied by an unexpected caller.
+
+For an unauthorised bank or payment transaction, contact the institution immediately through its official channel, record the complaint reference, and preserve evidence. For investment, insurance, pension, or tax disputes, use the relevant institution's and regulator's official complaint process.
+
+Money Genie must not impersonate a bank, regulator, insurer, broker, or tax officer. It must not ask for credentials, accept money, promise recovery, or tell a user to transfer funds.
+
+SOURCE NOTES (checked 2026-08-15):
+- RBI customer-awareness portal: https://systemhealth.rbi.org.in/rbikehtahai.rbi.org.in/RBI%20Kehta%20Hai%20!_files/rkh.html
+- RBI financial awareness material: https://www.rbi.org.in/commonperson/English/Scripts/PressReleases.aspx?Id=2123
+- NPCI UPI safety campaign: https://www.npci.org.in/PDF/npci/press-releases/2024/NPCI-Press-release-NPCI-Unveils-UPI-Safety-Awareness-Campaign-to-Champion-Safe-Digital-Payment-Practices.pdf

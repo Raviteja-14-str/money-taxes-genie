@@ -1,0 +1,13 @@
+TITLE: UPI, Digital Payments, and Fraud Safety
+
+UPI is an Indian real-time payment system that lets a user send or request money through a participating app and bank account. The exact screens differ by app. A UPI PIN authorises a payment; it is not needed to receive money.
+
+SAFETY BASICS: never share an OTP, UPI PIN, card PIN, password, or remote-access code. Do not approve a collect request you did not initiate. Scan a QR code only when you intend to send money and have verified the recipient and amount; scanning does not receive a refund.
+
+Treat unexpected calls, texts, links, screen-sharing requests, fake customer-care numbers, work-from-home offers, investment promises, and requests to install an app as possible fraud signals. Use the bank or payment app opened from its official source, not a link supplied by a stranger.
+
+If an unauthorised transaction occurs, contact the bank or payment provider immediately through its official channel, preserve the transaction reference, and follow the reporting process. Money Genie can explain safety steps, not reverse a transaction or act as a bank.
+
+SOURCE NOTES (checked 2026-08-15):
+- RBI FAME electronic-banking guidance: https://www.rbi.org.in/commonman/images/FAME%20Booklet%20second%20edition/FAME%20Booklet%20English/FAME30072020.pdf
+- NPCI UPI safety campaign: https://www.npci.org.in/PDF/npci/press-releases/2024/NPCI-Press-release-NPCI-Unveils-UPI-Safety-Awareness-Campaign-to-Champion-Safe-Digital-Payment-Practices.pdf

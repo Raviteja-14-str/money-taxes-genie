@@ -1,0 +1,13 @@
+TITLE: What Is Form 16, and Why You Need It
+
+Form 16 is a certificate your employer issues once a year, summarizing how much salary you were paid and how much tax (TDS) was deducted from it on your behalf during the financial year. If you're a salaried employee whose employer deducted any TDS, they're legally required to issue you a Form 16 — usually by mid-June, for the financial year that ended in March.
+
+WHY IT MATTERS: Form 16 is the single most useful document for filing your Income Tax Return (ITR). It already contains most of the numbers you need — your total salary, exemptions claimed (like HRA), deductions considered (like 80C investments you declared to your employer), and the exact tax already deducted — so filing your return mostly becomes a matter of confirming these figures rather than calculating from scratch.
+
+FORM 16 HAS TWO PARTS: Part A is generated through the government's TRACES portal and shows a summary of tax deducted and deposited each quarter, along with your employer's TAN (Tax Deduction Account Number) and your PAN. Part B is prepared by your employer and gives the detailed breakup — salary structure, exemptions, deductions under various sections, and the final taxable income and tax computed.
+
+IF YOU CHANGED JOBS DURING THE YEAR: you'll receive a separate Form 16 from each employer for the period you worked there. When filing your return, you need to combine the salary details from all of them — a common mistake is filing based on only the most recent employer's Form 16, which understates total income and can under-report tax liability.
+
+FORM 16 vs FORM 26AS vs AIS: Form 16 is issued by your employer specifically for salary income. Form 26AS is a broader tax statement (from the Income Tax Department) showing all TDS deducted by anyone who paid you — employer, bank, tenant, etc. AIS (Annual Information Statement) goes even further, showing a wider range of financial transactions the tax department has visibility into. It's worth cross-checking Form 16 against Form 26AS/AIS before filing, since mismatches can trigger scrutiny or delay refunds.
+
+IF YOU DON'T RECEIVE A FORM 16: it can happen if your income was below the taxable threshold and no TDS was deducted, or occasionally due to employer delay. You can still file your ITR using your salary slips and Form 26AS/AIS as reference — Form 16 is a convenience, not a strict legal requirement to file your return, though its absence means more manual work.

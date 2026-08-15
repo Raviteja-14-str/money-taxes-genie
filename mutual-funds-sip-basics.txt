@@ -1,0 +1,15 @@
+TITLE: Basics of Mutual Funds and SIP for a First-Time Investor
+
+A MUTUAL FUND pools money from many investors and uses it to buy a mix of stocks, bonds, or other assets, managed by a professional fund manager. Instead of picking individual stocks yourself, you buy "units" of the fund, and your money grows or shrinks along with the value of what the fund holds.
+
+NAV (Net Asset Value) is the price of one unit of a mutual fund, calculated at the end of each trading day based on the total value of everything the fund holds, divided by the number of units. When you invest, you buy units at that day's NAV; when you redeem, you sell at whatever the NAV is on that day.
+
+TYPES OF FUNDS: equity funds invest mainly in stocks (higher risk, higher potential return, better for long-term goals). Debt funds invest in bonds and fixed-income instruments (lower risk, more stable, better for short-to-medium-term goals). Hybrid funds mix both. Within equity funds, there are further categories — large-cap (bigger, more stable companies), mid-cap and small-cap (higher growth potential, higher volatility), and sector-specific funds (focused on one industry, higher risk due to lack of diversification).
+
+SIP (Systematic Investment Plan) is simply a way of investing a fixed amount into a mutual fund at regular intervals (usually monthly) instead of investing a lump sum all at once. It doesn't require timing the market — you buy more units when prices are low and fewer when prices are high, which averages out your purchase cost over time (a benefit often called "rupee cost averaging"). SIPs are popular because they build a habit of regular investing and don't require a large amount upfront.
+
+EXPENSE RATIO is the annual fee a fund charges to manage your money, expressed as a percentage of your investment. A 1% expense ratio on a ₹1 lakh investment costs you ₹1,000 a year, deducted automatically from the fund's returns. Lower expense ratios matter more than they seem, since they compound against you over long periods.
+
+ELSS (Equity Linked Savings Scheme) is a specific category of equity mutual fund that also qualifies for a tax deduction under Section 80C (in the Old Tax Regime), up to ₹1.5 lakh. It comes with a mandatory 3-year lock-in — the shortest lock-in among all 80C options — making it a popular choice for people who want tax savings and equity exposure together.
+
+RISK REMINDER: mutual fund returns aren't guaranteed and can go down as well as up, especially over short periods. Past performance shown in fund brochures doesn't guarantee future returns. This document explains how mutual funds work — it isn't a recommendation for any specific fund or investment amount, and everyone's right choice depends on their own goals, timeline, and risk comfort.

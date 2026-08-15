@@ -1,0 +1,19 @@
+TITLE: Fixed Pay, Variable Pay, CTC, Gross Pay, and Take-Home Pay
+
+FIXED PAY is the relatively predictable part of compensation paid for the role and employment period. It commonly includes basic pay and fixed allowances, but the exact structure is defined by the employment offer and payroll policy. Fixed does not automatically mean tax-free or guaranteed forever: the employment contract, attendance, leave, and company policy still matter.
+
+VARIABLE PAY is compensation that depends on a condition such as performance, company results, sales, targets, attendance, or a discretionary decision. It may be called a bonus, incentive, commission, annual performance pay, or joining/retention bonus. A target variable amount is not the same as an amount actually earned; check the eligibility rules, payout timing, and clawback conditions.
+
+CTC (Cost to Company) is an employer's annual cost estimate. It can include salary, employer PF contribution, gratuity provision, insurance benefits, joining bonus, and target variable pay. CTC is therefore not the same as monthly take-home pay.
+
+GROSS PAY is the pay before employee deductions for a pay period. TAKE-HOME or NET PAY is the amount credited after deductions such as employee PF, professional tax where applicable, income-tax TDS, insurance, and other authorised deductions. A payslip should show the components and deductions separately.
+
+HOW TO READ AN OFFER: separate fixed annual pay, target variable pay, guaranteed first-year payments, employer benefits, and one-time payments. Ask what is guaranteed, what is prorated, when variable pay is paid, what happens if you join or leave mid-cycle, and whether the amount is quoted before or after deductions.
+
+TAX NOTE: salary, bonus, commission, allowances, and benefits can have different tax treatment depending on the current law and facts. Do not infer taxability only from the label on a payslip. Use the current Income Tax Department guidance and the employer's Form 16 for the relevant year.
+
+This is educational information, not employment, payroll, or tax advice. Employment contracts and current rules control.
+
+SOURCE NOTES (checked 2026-08-15):
+- Income Tax Department, Salaried Individuals: https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1
+- EPFO FAQ: https://www.epfindia.gov.in/site_en/FAQ.php

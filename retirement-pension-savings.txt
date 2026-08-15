@@ -1,0 +1,15 @@
+TITLE: EPF, EPS, EDLI, NPS, PPF, and Retirement Planning Basics
+
+EPF is a contributory provident-fund scheme administered by EPFO for eligible covered employment. EPFO also administers EPS, a pension scheme, and EDLI, an insurance scheme. Salary slips may show employee and employer contributions separately.
+
+UAN is used to connect a member's EPF member IDs across employment. Keep the profile, nomination, and employment records accurate. Transfer and withdrawal rules are specific; do not treat a social-media shortcut as an official procedure.
+
+NPS is a defined-contribution pension system regulated by PFRDA. Its value depends on contributions, asset allocation, market performance, charges, and exit rules. NPS is not a guaranteed return product.
+
+PPF is a government small-savings scheme available through authorised banks and post offices. It is long-term and has contribution, lock-in, loan, withdrawal, interest, and tax rules that should be checked against current official guidance.
+
+SOURCE NOTES (checked 2026-08-15):
+- EPFO overview: https://www.epfindia.gov.in/site_en/AboutEPFO.php
+- EPFO FAQ: https://www.epfindia.gov.in/site_en/FAQ.php
+- PFRDA About NPS: https://www.pfrda.org.in/en/schemes/national-pension-system/about-nps
+- India Post savings schemes: https://www.indiapost.gov.in/banking-services/savings

@@ -1,0 +1,19 @@
+TITLE: Bank Accounts, Deposits, KYC, Nomination, and Deposit Insurance
+
+A savings account is commonly used for payments and accessible savings. A current account is generally designed for frequent business transactions. A fixed deposit locks money for an agreed period and rate, while a recurring deposit accepts regular contributions; products and terms differ by institution.
+
+KYC means Know Your Customer. Banks and regulated entities use identity and address information to meet legal and anti-money-laundering requirements. KYC is not a reason to share passwords, PINs, OTPs, card numbers, or account credentials with another person.
+
+NOMINATION tells an institution who should receive or claim assets through its process after the account holder's death. It is useful but does not replace a complete estate plan or settle every legal question. Keep nominations and contact details current.
+
+Before opening a deposit, compare the interest calculation, tenure, premature-closure rules, renewal instruction, tax treatment, liquidity, and institution safety. A high headline rate may not suit a short-term cash need.
+
+DICGC deposit insurance is subject to its rules and limits. The current DICGC guide states that each depositor is insured up to ₹5 lakh for principal and interest in the same right and capacity at an insured bank. The cover is not a promise that every financial product is insured; verify the bank and the latest DICGC guidance.
+
+Never let Money Genie collect or store bank login information, OTPs, card PINs, or full account numbers. For a real account issue, use the bank's official channel and its complaint process.
+
+This is educational information and does not recommend a bank or deposit.
+
+SOURCE NOTES (checked 2026-08-15):
+- RBI financial awareness material: https://www.rbi.org.in/commonperson/English/Scripts/PressReleases.aspx?Id=2123
+- DICGC guide to deposit insurance: https://www.dicgc.org.in/guide-to-deposit-insurance
